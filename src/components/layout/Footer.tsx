@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           </Col>
           <Col md={6} className="text-md-end mt-3 mt-md-0">
             <a
-              href="https://github.com/venkatesh"
+              href="https://github.com/Venkatesh-7-lab"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white me-3 text-decoration-none">
