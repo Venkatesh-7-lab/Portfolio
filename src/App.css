@@ -1,0 +1,32 @@
+main {
+  min-height: 80vh;
+  min-width: 100vw;
+}
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 0.75rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.navbar-dark-mode {
+  background-color: #1f1f1f !important;
+}
+
+.card-dark-mode {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1;
+}
