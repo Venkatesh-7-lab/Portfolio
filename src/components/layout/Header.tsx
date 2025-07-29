@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
             <Button
               variant={isDark ? "outline-light" : "outline-primary"}
               size="sm"
-              href="/venkatesh_resume.pdf"
+              href="/Venkatesh_Adaka.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="ms-3">
