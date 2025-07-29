@@ -19,15 +19,16 @@ const educationList = [
     degree: "B.Tech – Computer Science",
     institution: "PACE INSTITUTE OF TECHNOLOGY AND SCIENCES",
     duration: "2019 – 2023",
-    description: "Focused on software engineering, data structures, DBMS, and web development.",
+    description:
+      "Focused on software engineering, data structures, DBMS, and web development.",
   },
   {
     degree: "Intermediate – MPC",
     institution: "Sri Saraswathi Jr College",
     duration: "2017 – 2019",
-    description: "Maths, Physics, and Chemistry major with strong logical foundation.",
+    description:
+      "Maths, Physics, and Chemistry major with strong logical foundation.",
   },
-  
 ];
 
 export const Education: React.FC = () => {
@@ -116,7 +117,6 @@ export const Education: React.FC = () => {
         {experienceList.map((exp, idx) => (
           <div key={idx} style={styles.card}>
             <div style={styles.heading}>{exp.title}</div>
-            <div style={styles.sub}>{exp.company} – {exp.location}</div>
             <div style={styles.duration}>{exp.duration}</div>
             <ul style={styles.desc}>
               {exp.description.map((point, i) => (
