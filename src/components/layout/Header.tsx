@@ -36,6 +36,9 @@ export const Header: React.FC = () => {
             <Nav.Link as={Link} to="/skills">
               Skills
             </Nav.Link>
+            <Nav.Link as={Link} to="/education">
+              Expericence & Education
+            </Nav.Link>
 
             <Button
               variant={isDark ? "outline-light" : "outline-primary"}
