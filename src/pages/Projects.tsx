@@ -1,38 +1,8 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Modal,
-  Tab,
-  Tabs,
-} from "react-bootstrap";
+import { Container, Row, Col, Modal, Tab, Tabs } from "react-bootstrap";
+import { projectList, type Project } from "../data/projects";
+import { ProjectCard } from "../components/ui";
 
-interface Project {
-  title: string;
-  description: string;
-  techStack: string[];
-  liveLink?: string;
-  githubLink?: string;
-  screenshots?: string[]; // Optional if you want later
-}
-
-const projectList: Project[] = [
-  {
-    title: "Volunteer Management System (VMS)",
-    description:
-      "A system to manage volunteers from registration to study completion. It supports different user roles like admins and coordinators, allows screening and scheduling of volunteers, and tracks their progress. The system includes role-based dashboards, approval workflows, and secure data storage.",
-    techStack: ["React", "Redux", "TypeScript", ".NET Core", "SQL Server"],
-  },
-  {
-    title: "Annual Product Quality Review (APQR)",
-    description:
-      "A system designed to automate and manage Annual Product Quality Review (APQR) schedules and clinical task planning. It supports frequency-based execution, ensures regulatory compliance, and streamlines tracking of recurring quality activities using optimized SQL procedures and dynamic JSON data handling.",
-    techStack: ["React", "Bootstrap", "SQL Server", ".NET Core Web API"],
-  },
-];
 export const Projects: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -63,29 +33,13 @@ export const Projects: React.FC = () => {
         <Row className="g-4">
           {projectList.map((project, index) => (
             <Col key={index} md={6}>
-              <Card className="h-100 shadow-sm border-0">
-                <Card.Body>
-                  <Card.Title className="fs-5 fw-bold mb-2">
-                    {project.title}
-                  </Card.Title>
-                  <Card.Text className="text-muted mb-2">
-                    {project.description.slice(0, 100)}...
-                  </Card.Text>
-                  <div className="mb-3 d-flex flex-wrap gap-2">
-                    {project.techStack.map((tech, i) => (
-                      <span key={i} className="badge bg-dark">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <Button
-                    variant="outline-primary"
-                    size="sm"
-                    onClick={() => handleOpenModal(project)}>
-                    View Details
-                  </Button>
-                </Card.Body>
-              </Card>
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description.slice(0, 100)}
+                techStack={project.techStack}
+                onViewDetails={() => handleOpenModal(project)}
+              />
             </Col>
           ))}
         </Row>
