@@ -2,11 +2,15 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark text-white py-4 mt-auto">
+    <footer
+      className="text-white py-4 mt-auto"
+      style={{
+        background: "linear-gradient(90deg,rgb(253, 73, 13),rgb(233, 8, 8))",
+      }}>
       <Container>
         <Row className="align-items-center text-center text-md-start">
           <Col md={6}>
-            <p className="mb-0">
+            <p className="mb-0 fw-bold fs-6">
               © {new Date().getFullYear()} Venkatesh Adaka. All rights reserved.
             </p>
           </Col>

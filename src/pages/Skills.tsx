@@ -18,7 +18,14 @@ import { barData, radarData } from "../data/skills";
 
 export const Skills: React.FC = () => {
   return (
-    <section className="skills-section py-5 bg-white" id="skills">
+    <section
+      className="skills-section py-5 bg-white"
+      id="skills"
+      style={{
+        height: "80vh",
+        background:
+          "linear-gradient(90deg,rgb(206, 200, 219),rgb(186, 17, 130))",
+      }}>
       <Container>
         <h2 className="text-center fw-bold mb-5">My Technical Skills</h2>
         <Row className="gy-4">

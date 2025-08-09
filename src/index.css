@@ -66,3 +66,136 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.experience-education-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.experience-list {
+  display: grid;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.experience-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.experience-card:hover,
+.experience-card:focus {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #0d6efd;
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.description-list {
+  font-size: 0.9rem;
+  color: #333;
+  padding-left: 1rem;
+}
+
+.education-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #0d6efd;
+  transform: translateX(-50%);
+}
+
+.degree-card {
+  position: relative;
+  width: 45%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 25px;
+}
+
+.degree-card.left {
+  left: 0;
+  text-align: left;
+  margin-left: 0;
+}
+
+.degree-card.right {
+  left: 55%;
+  text-align: left;
+  margin-left: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 4px solid #0d6efd;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.degree-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #0d6efd;
+}
+
+.subheading {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 8px;
+}
