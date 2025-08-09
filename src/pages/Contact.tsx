@@ -35,6 +35,7 @@ export const Contact: React.FC = () => {
       className="contact-section py-5"
       id="contact"
       style={{
+        height: "80 vh",
         background:
           "linear-gradient(90deg,rgb(39, 219, 108),rgb(238, 146, 146))",
       }}>
