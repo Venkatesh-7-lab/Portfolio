@@ -151,7 +151,12 @@ export const Header: React.FC = () => {
                   Download Resume
                 </Button>
               )}
-              <Button variant="danger" onClick={() => setShowResume(false)}>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  setShowResume(false);
+                  setCanDownload(false);
+                }}>
                 Close
               </Button>
             </Modal.Footer>
