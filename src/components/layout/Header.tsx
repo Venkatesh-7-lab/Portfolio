@@ -1,13 +1,17 @@
-import React from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Navbar, Nav, Container, Button, Modal, Form } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header: React.FC = () => {
   const location = useLocation();
+  const [showResume, setShowResume] = useState(false);
+  const [canDownload, setCanDownload] = useState(false);
 
   const isActive = (path: string) =>
     path === "/" ? location.pathname === "/" : location.pathname == path;
-
+  const handleResumeDownload = (e: any) => {
+    setCanDownload(e.target.checked);
+  };
   return (
     <Navbar
       expand="lg"
@@ -98,19 +102,9 @@ export const Header: React.FC = () => {
                 boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
                 transition: "all 0.3s ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#fff";
-                e.currentTarget.style.color = "#e50914";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#FFD700";
-                e.currentTarget.style.color = "#000";
-              }}
-              href="/Venkatesh_Adaka.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => setShowResume(true)}
               className="ms-3">
-              📄 Resume
+              📄 View Resume
             </Button>
 
             {/* <Button
@@ -122,6 +116,47 @@ export const Header: React.FC = () => {
             </Button> */}
           </Nav>
         </Navbar.Collapse>
+
+        {showResume && (
+          <Modal
+            show={showResume}
+            onHide={() => setShowResume(false)}
+            size="lg"
+            centered
+            scrollable>
+            <Modal.Header closeButton className="bg-primary text-white">
+              <Modal.Title>Resume Preview</Modal.Title>
+            </Modal.Header>
+            <Modal.Body style={{ height: "80vh" }}>
+              <embed
+                src="/Venkatesh_Adaka.pdf#toolbar=0"
+                type="application/pdf"
+                width="100%"
+                height="100%"
+              />
+              <Form.Check
+                type="checkbox"
+                label={"I have reviewed the resume and want to download it"}
+                onChange={handleResumeDownload}
+                checked={canDownload}
+              />
+            </Modal.Body>
+            <Modal.Footer className="bg-primary">
+              {canDownload && (
+                <Button
+                  href="/Venkatesh_Adaka.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="success">
+                  Download Resume
+                </Button>
+              )}
+              <Button variant="danger" onClick={() => setShowResume(false)}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
       </Container>
     </Navbar>
   );
